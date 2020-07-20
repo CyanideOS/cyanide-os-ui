@@ -26,7 +26,7 @@ export class ButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.innerText && this.innerComponent)
+    if (!this.innerText && !this.innerComponent)
       this.exceptionService.AssertionException(
         `Expected data inside button for rendering got "null"`
       );
