@@ -1,6 +1,13 @@
+@import "../schemes";
+
 .root {
   display: grid;
-  grid-template-rows: calc(100vh - 3rem) 3rem;
+  grid-template-rows: calc(100vh - #{$taskbarHeight}) $taskbarHeight;
 
   background-size: cover;
+
+  .windows {
+    max-height: calc(100vh - #{$taskbarHeight});
+    overflow: hidden;
+  }
 }

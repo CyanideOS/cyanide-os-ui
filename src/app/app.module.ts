@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TaskbarComponent } from './components/global/taskbar/taskbar.component';
 import { NotificationPanelComponent } from './components/global/notification-panel/notification-panel.component';
 import { NativeSdkComponent } from './components/native-sdk/native-sdk.component';
+import { DesktopComponent } from './routes/global/desktop/desktop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskbarComponent,
     NotificationPanelComponent,
-    NativeSdkComponent
+    NativeSdkComponent,
+    DesktopComponent
   ],
   imports: [
     BrowserModule,
