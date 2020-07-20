@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'native-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
