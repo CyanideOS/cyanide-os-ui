@@ -1,3 +1,18 @@
-<button #button (mousemove)="move($event)" [ngStyle]="{ '--X': X, '--Y': Y }">
-  Hello world
+<button
+  #button
+  (mousemove)="move($event)"
+  [ngStyle]="{
+    '--X': X,
+    '--Y': Y,
+    width: width,
+    height: height,
+    'text-overflow': overflow
+  }"
+>
+  <div
+    class="content"
+    *ngIf="innerComponent"
+    [innerHTML]="innerComponent.outerHTML"
+  ></div>
+  <div class="content" *ngIf="innerText" [innerText]="innerText"></div>
 </button>
