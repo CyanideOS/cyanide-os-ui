@@ -1,0 +1,22 @@
+.taskbar {
+  display: grid;
+  grid-template-columns: 4rem auto 4rem;
+  align-items: center;
+  box-shadow: 0 42px 84px #ccc;
+  backdrop-filter: blur(3px) saturate(0.5);
+
+  .cyanide {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      // background: #ffffff41;
+      background: #eee;
+    }
+  }
+}

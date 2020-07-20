@@ -1,5 +1,13 @@
-<div class="root">
-  <router-outlet></router-outlet>
+<div
+  class="root"
+  [ngStyle]="{
+    background: 'url(' + (getWallpaperUrl() | async) + ')',
+    'background-size': 'cover'
+  }"
+>
+  <div class="windows">
+    f
+    <router-outlet></router-outlet>
+  </div>
+  <taskbar></taskbar>
 </div>
-
-<taskbar></taskbar>

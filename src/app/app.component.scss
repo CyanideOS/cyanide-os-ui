@@ -1,0 +1,6 @@
+.root {
+  display: grid;
+  grid-template-rows: calc(100vh - 3rem) 3rem;
+
+  background-size: cover;
+}
