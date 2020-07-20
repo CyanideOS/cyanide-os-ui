@@ -1,3 +1,20 @@
+@import "../../../../schemes";
+@import "../globals";
+
 button {
-    
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  outline: none;
+  background: $primary;
+  color: $text-body;
+  transition: $transition;
+
+  &:hover {
+    background: $primary-hover;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }

@@ -1,1 +1,3 @@
-<button>Hello world</button>
+<button #button (mousemove)="move($event)" [ngStyle]="{ '--X': X, '--Y': Y }">
+  Hello world
+</button>
