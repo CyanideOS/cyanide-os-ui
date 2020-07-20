@@ -2,7 +2,7 @@
 
 .root {
   display: grid;
-  grid-template-rows: calc(100vh - #{$taskbarHeight}) $taskbarHeight;
+  grid-template-rows: $taskbarHeight calc(100vh - #{$taskbarHeight});
 
   background-size: cover;
 
