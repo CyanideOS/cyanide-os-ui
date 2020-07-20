@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cyanide-os"
+    }
+  },
+  "defaultProject": "cyanide-os",
+  "cli": {
+    "analytics": "e2f14af1-1855-4981-a707-089f4040199e"
+  }
 }
