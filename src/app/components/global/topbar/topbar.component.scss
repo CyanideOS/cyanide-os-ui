@@ -1,18 +1,18 @@
 @import "../../../../schemes";
 
-.taskbar {
+.topbar {
   display: grid;
-  grid-template-columns: calc(#{$taskbarHeight} + 1rem) auto 10rem;
+  grid-template-columns: calc(#{$topbarHeight} + 1rem) auto 10rem;
   align-items: center;
   box-shadow: 0 42px 84px #ccc;
-  max-height: $taskbarHeight;
+  max-height: $topbarHeight;
   background: $panel-background;
-  backdrop-filter: $taskbar-backdrop;
+  backdrop-filter: $topbar-backdrop;
 
   $paddingTB: 0.2rem;
 
   img {
-    height: calc(#{$taskbarHeight} - (#{$paddingTB} * 2));
+    height: calc(#{$topbarHeight} - (#{$paddingTB} * 2));
     filter: invert(0);
   }
 
@@ -35,7 +35,7 @@
   .actions {
     display: grid;
     grid-template-columns: repeat(auto-fit, 1rem);
-    grid-gap: 0.4rem;
+    grid-gap: 0.6rem;
     align-items: center;
   }
 }

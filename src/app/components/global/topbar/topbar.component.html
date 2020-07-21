@@ -1,11 +1,16 @@
-<div class="taskbar">
+<div class="topbar">
   <div class="cyanide">
     <img src="../../../../assets/icons/cyanide/icon-72x72.png" alt="" />
   </div>
-  <div class="applications">CyanideOS</div>
+  <div class="applications">{{ topbarPanelService.title | async }}</div>
   <div class="actions">
     <img
       src="../../../../assets/icons/icons/notification-24x24.svg"
+      (click)="toggleNotificationPanel()"
+      alt=""
+    />
+    <img
+      src="../../../../assets/icons/icons/wifi-50x50.svg"
       (click)="toggleNotificationPanel()"
       alt=""
     />

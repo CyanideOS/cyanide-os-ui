@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { PanelService } from "src/app/services/public/api/panel/panel.service";
+import { NotificationPanelService } from "src/app/services/public/api/panel/notification/notification.service";
 
 @Component({
   selector: "notification-panel",
@@ -7,7 +7,7 @@ import { PanelService } from "src/app/services/public/api/panel/panel.service";
   styleUrls: ["./notification-panel.component.scss"],
 })
 export class NotificationPanelComponent implements OnInit {
-  constructor(public panelService: PanelService) {}
+  constructor(public panelService: NotificationPanelService) {}
 
   ngOnInit(): void {}
 }

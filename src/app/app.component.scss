@@ -2,12 +2,12 @@
 
 .root {
   display: grid;
-  grid-template-rows: $taskbarHeight calc(100vh - #{$taskbarHeight});
+  grid-template-rows: $topbarHeight calc(100vh - #{$topbarHeight});
 
   background-size: cover;
 
   .windows {
-    max-height: calc(100vh - #{$taskbarHeight});
+    max-height: calc(100vh - #{$topbarHeight});
     overflow: hidden;
   }
 }

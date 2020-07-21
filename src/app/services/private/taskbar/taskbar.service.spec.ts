@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { TaskbarService } from './taskbar.service';
+import { topbarService } from "./topbar.service";
 
-describe('TaskbarService', () => {
-  let service: TaskbarService;
+describe("topbarService", () => {
+  let service: topbarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TaskbarService);
+    service = TestBed.inject(topbarService);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(service).toBeTruthy();
   });
 });

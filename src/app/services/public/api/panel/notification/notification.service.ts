@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs";
 @Injectable({
   providedIn: "root",
 })
-export class PanelService {
+export class NotificationPanelService {
   isNotificationsOpened: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() {}

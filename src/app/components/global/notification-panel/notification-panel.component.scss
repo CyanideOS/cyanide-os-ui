@@ -4,11 +4,11 @@ $width: 22vw;
 
 .notifications {
   position: absolute;
-  top: $taskbarHeight;
+  top: $topbarHeight;
   right: -$width;
   width: $width;
   opacity: 0;
-  height: calc(100vh - #{$taskbarHeight});
+  height: calc(100vh - #{$topbarHeight});
   transition: map-get($map: $panel-transition, $key: "notifications");
   backdrop-filter: $panel-backdrop;
   background: $panel-background;
