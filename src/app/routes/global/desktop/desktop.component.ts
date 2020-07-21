@@ -13,5 +13,9 @@ export class DesktopComponent implements OnInit {
     this.topbarPanelService.title.next("CyanideOS");
   }
 
+  openNewWindow() {
+    console.log("OPEN OUTLOOK!");
+  }
+
   ngOnInit(): void {}
 }
