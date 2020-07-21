@@ -9,7 +9,7 @@ $background: map-get(
 
 button {
   border: none;
-  padding: 0.5rem 1.3rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   font-weight: 500;
   outline: none;
@@ -69,14 +69,18 @@ button {
       font-weight: 500;
     }
 
+    .button-component-data,
+    .innerText {
+      margin-left: 0.7rem;
+    }
+
     img.button-icon {
       height: 100%;
-      margin-right: 0.7rem;
     }
 
     img.nutella-icon {
       height: 100%;
-      margin-right: 0.7rem;
+
       @include image-color($background);
     }
   }
