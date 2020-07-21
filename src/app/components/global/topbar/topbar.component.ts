@@ -9,7 +9,7 @@ import { TopbarPanelService } from "src/app/services/public/api/panel/topbar/top
 })
 export class TopbarComponent implements OnInit {
   constructor(
-    private notificationPanelService: NotificationPanelService,
+    protected notificationPanelService: NotificationPanelService,
     public topbarPanelService: TopbarPanelService
   ) {}
 

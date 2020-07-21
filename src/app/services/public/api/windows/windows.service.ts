@@ -13,6 +13,6 @@ export class WindowsService {
   constructor() {}
 
   openWindowByPackageName(packageName: string, args: Object = {}) {
-    console.log(packageName);
+    console.log(packageName, args);
   }
 }

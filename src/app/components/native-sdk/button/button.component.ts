@@ -20,7 +20,7 @@ export class NativeButton implements OnInit {
   @Input("nutellaIcon") nutellaIcon: string;
   @Input("height") height: number = 2;
 
-  constructor(private exceptionService: NativeSDKExceptionService) {}
+  constructor(protected exceptionService: NativeSDKExceptionService) {}
 
   move($event: MouseEvent) {
     this.X = $event.clientX;

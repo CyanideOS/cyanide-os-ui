@@ -9,7 +9,7 @@ import { WindowsService } from "../../../services/public/api/windows/windows.ser
 })
 export class DesktopComponent implements OnInit {
   constructor(
-    private topbarPanelService: TopbarPanelService,
+    protected topbarPanelService: TopbarPanelService,
     protected windowsService: WindowsService
   ) {}
 
