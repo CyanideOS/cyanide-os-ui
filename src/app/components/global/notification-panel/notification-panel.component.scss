@@ -1,0 +1,21 @@
+@import "../../../../schemes";
+
+$width: 22vw;
+
+.notifications {
+  position: absolute;
+  top: $taskbarHeight;
+  right: -$width;
+  width: $width;
+  opacity: 0;
+  height: calc(100vh - #{$taskbarHeight});
+  transition: map-get($map: $panel-transition, $key: "notifications");
+  backdrop-filter: $panel-backdrop;
+  box-shadow: -2px 0 20px #ffffff42;
+  z-index: 1e5;
+
+  &.opened {
+    right: 0;
+    opacity: 1;
+  }
+}

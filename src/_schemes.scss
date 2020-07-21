@@ -15,6 +15,10 @@ $text: (
   "disabled": #dfdfdf,
 );
 
-@function change() {
-  $primary: #fff;
-}
+$transition: all 0.2s ease-out;
+
+$panel-transition: (
+  "notifications": all 0.2s ease-in,
+);
+$taskbar-backdrop: blur(3px) saturate(0.4) contrast(0.9);
+$panel-backdrop: blur(8px) saturate(0.5) contrast(0.6);

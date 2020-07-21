@@ -9,8 +9,10 @@ import { PanelService } from "../../../services/public/api/panel/panel.service";
 export class TaskbarComponent implements OnInit {
   constructor(private panelService: PanelService) {}
 
-  openNotificationPanel(): void {
-    this.panelService.isNotificationsOpened.next(true);
+  toggleNotificationPanel(): void {
+    this.panelService.isNotificationsOpened.next(
+      !this.panelService.isNotificationsOpened.value
+    );
   }
 
   ngOnInit(): void {}
