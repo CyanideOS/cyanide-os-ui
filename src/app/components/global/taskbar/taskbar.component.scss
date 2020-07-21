@@ -2,7 +2,7 @@
 
 .taskbar {
   display: grid;
-  grid-template-columns: calc(#{$taskbarHeight} + 1rem) auto 4rem;
+  grid-template-columns: calc(#{$taskbarHeight} + 1rem) auto 10rem;
   align-items: center;
   box-shadow: 0 42px 84px #ccc;
   max-height: $taskbarHeight;
@@ -10,18 +10,31 @@
 
   $paddingTB: 0.2rem;
 
+  img {
+    height: calc(#{$taskbarHeight} - (#{$paddingTB} * 2));
+    filter: invert(0);
+  }
+
   .cyanide {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: $paddingTB 1rem;
 
-    img {
-      height: calc(#{$taskbarHeight} - (#{$paddingTB} * 2));
-    }
-
     &:hover {
       background: #ffffff60;
     }
+  }
+
+  .applications {
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1rem);
+    grid-gap: 0.4rem;
+    align-items: center;
   }
 }
