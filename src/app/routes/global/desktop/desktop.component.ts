@@ -10,7 +10,6 @@ export class DesktopComponent implements OnInit {
   constructor(private topbarPanelService: TopbarPanelService) {}
 
   desktopFocused() {
-    console.log("fdjo");
     this.topbarPanelService.title.next("CyanideOS");
   }
 

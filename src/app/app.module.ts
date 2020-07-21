@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { topbarComponent } from "./components/global/topbar/topbar.component";
+import { TopbarComponent } from "./components/global/topbar/topbar.component";
 import { NotificationPanelComponent } from "./components/global/notification-panel/notification-panel.component";
 import { NativeSdkModule } from "./components/native-sdk/native-sdk.module";
 import { DesktopComponent } from "./routes/global/desktop/desktop.component";
@@ -12,7 +12,7 @@ import { WindowComponent } from './components/global/window/window.component';
 @NgModule({
   declarations: [
     AppComponent,
-    topbarComponent,
+    TopbarComponent,
     NotificationPanelComponent,
     DesktopComponent,
     WindowComponent,

@@ -2,12 +2,12 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { NativeSdkComponent } from "./native-sdk.component";
 import { BrowserModule } from "@angular/platform-browser";
-import { ButtonComponent } from "./button/button.component";
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { NativeButton } from "./button/button.component";
+import { CheckboxComponent } from "./checkbox/checkbox.component";
 
 @NgModule({
-  declarations: [NativeSdkComponent, ButtonComponent, CheckboxComponent],
+  declarations: [NativeSdkComponent, NativeButton, CheckboxComponent],
   imports: [BrowserModule, CommonModule],
-  exports: [NativeSdkComponent],
+  exports: [NativeSdkComponent, NativeButton],
 })
 export class NativeSdkModule {}

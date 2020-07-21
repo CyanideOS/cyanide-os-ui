@@ -7,7 +7,7 @@ import { TopbarPanelService } from "src/app/services/public/api/panel/topbar/top
   templateUrl: "./topbar.component.html",
   styleUrls: ["./topbar.component.scss"],
 })
-export class topbarComponent implements OnInit {
+export class TopbarComponent implements OnInit {
   constructor(
     private notificationPanelService: NotificationPanelService,
     public topbarPanelService: TopbarPanelService

@@ -1,5 +1,11 @@
 @import "../../../../schemes";
 @import "../globals";
+@import "../tools.scss";
+
+$background: map-get(
+  $map: $primary,
+  $key: "color",
+);
 
 button {
   border: none;
@@ -7,8 +13,8 @@ button {
   border-radius: 0.3rem;
   font-weight: 500;
   outline: none;
-  background: map-get($map: $primary, $key: "color");
-  color: map-get($map: $text, $key: "body");
+  background: $background;
+  @include text-color($background);
   transition: $transition;
 
   &:hover {
@@ -20,15 +26,29 @@ button {
   }
 
   &.disabled {
-    background: map-get($map: $primary, $key: "disabled");
-    color: map-get($map: $text, $key: "disabled");
+    $disabled-background: map-get(
+      $map: $primary,
+      $key: "disabled",
+    );
+    background: $disabled-background;
 
     &:hover {
-      background: map-get($map: $primary, $key: "disabled");
+      background: $disabled-background;
     }
 
     &:active {
       transform: unset;
+    }
+
+    .content {
+      @include text-color($disabled-background, true);
+
+      img.button-icon {
+        @include image-color(
+          $background,
+          false
+        ); // Explicitly mentioned "false" so because opacity of its parent also get added
+      }
     }
   }
 
@@ -44,6 +64,7 @@ button {
     img.button-icon {
       height: 100%;
       margin-right: 0.7rem;
+      @include image-color($background);
     }
   }
 }

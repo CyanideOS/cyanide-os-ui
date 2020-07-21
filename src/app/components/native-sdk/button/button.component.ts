@@ -6,7 +6,7 @@ import { NativeSDKExceptionService } from "../../../services/public/native-sdk/e
   templateUrl: "./button.component.html",
   styleUrls: ["./button.component.scss"],
 })
-export class ButtonComponent implements OnInit {
+export class NativeButton implements OnInit {
   X: number = 0;
   Y: number = 0;
 
