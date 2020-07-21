@@ -17,4 +17,15 @@ button {
   &:active {
     transform: scale(0.95);
   }
+
+  .content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    img.button-icon {
+      height: 100%;
+      margin-right: 0.7rem;
+    }
+  }
 }

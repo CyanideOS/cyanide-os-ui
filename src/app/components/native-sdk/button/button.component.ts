@@ -16,7 +16,8 @@ export class ButtonComponent implements OnInit {
   @Input("innerText") innerText: string = "";
   @Input("overflow") overflow: "clip" | "ellipsis";
   @Input("width") width: number;
-  @Input("height") height: number;
+  @Input("icon") icon: string;
+  @Input("height") height: number = 2.5;
 
   constructor(private exceptionService: NativeSDKExceptionService) {}
 

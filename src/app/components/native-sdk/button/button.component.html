@@ -1,18 +1,21 @@
 <button
   #button
   (mousemove)="move($event)"
+  [style]="{
+    '--mouseX': X,
+    '--mouseY': Y
+  }"
   [ngStyle]="{
-    '--X': X,
-    '--Y': Y,
-    width: width,
-    height: height,
+    width: width + 'rem',
+    height: height + 'rem',
+    'max-width': width + 'rem',
+    'max-height': height + 'rem',
     'text-overflow': overflow
   }"
 >
-  <div
-    class="content"
-    *ngIf="innerComponent"
-    [innerHTML]="innerComponent.outerHTML"
-  ></div>
-  <div class="content" *ngIf="innerText" [innerText]="innerText"></div>
+  <div class="content">
+    <img class="button-icon" [src]="icon" *ngIf="icon" />
+    <div *ngIf="innerComponent" [innerHTML]="innerComponent.outerHTML"></div>
+    <div *ngIf="innerText" [innerText]="innerText"></div>
+  </div>
 </button>
