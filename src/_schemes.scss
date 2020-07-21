@@ -2,10 +2,19 @@ $taskbarHeight: 1.5rem;
 
 //& Theme
 //? Body
-$primary: #007bff;
-$primary-hover: #006fe6;
-$primary-disabled: #0059b8;
-$primary-outlined: #ffffff8a;
+$primary: (
+  "color": #007bff,
+  "hover": #006fe6,
+  "disabled": #0059b8,
+  "outlined": #ffffff8a,
+);
 
 //? Text
-$text-body: #fff;
+$text: (
+  "body": #fff,
+  "disabled": #dfdfdf,
+);
+
+@function change() {
+  $primary: #fff;
+}

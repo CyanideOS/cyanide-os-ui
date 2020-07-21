@@ -7,12 +7,12 @@ button {
   border-radius: 0.3rem;
   font-weight: 500;
   outline: none;
-  background: $primary;
-  color: $text-body;
+  background: map-get($map: $primary, $key: "color");
+  color: map-get($map: $text, $key: "body");
   transition: $transition;
 
   &:hover {
-    background: $primary-hover;
+    background: map-get($map: $primary, $key: "hover");
   }
 
   &:active {
@@ -20,11 +20,11 @@ button {
   }
 
   &.disabled {
-    background: $primary-disabled;
-    color: rgb(223, 223, 223);
+    background: map-get($map: $primary, $key: "disabled");
+    color: map-get($map: $text, $key: "disabled");
 
     &:hover {
-      background: $primary-disabled;
+      background: map-get($map: $primary, $key: "disabled");
     }
 
     &:active {
@@ -33,7 +33,7 @@ button {
   }
 
   &.outlined {
-    border: 2px solid $primary-outlined;
+    border: 2px solid map-get($map: $primary, $key: "outlined");
   }
 
   .content {
