@@ -17,6 +17,7 @@ export class NativeButton implements OnInit {
   @Input("overflow") overflow: "clip" | "ellipsis";
   @Input("width") width: number;
   @Input("icon") icon: string;
+  @Input("nutellaIcon") nutellaIcon: string;
   @Input("height") height: number = 2;
 
   constructor(private exceptionService: NativeSDKExceptionService) {}
@@ -30,6 +31,11 @@ export class NativeButton implements OnInit {
     if (!this.innerText && !this.innerComponent)
       this.exceptionService.AssertionException(
         `Expected data inside button for rendering got "null"`
+      );
+
+    if (this.icon && this.nutellaIcon)
+      this.exceptionService.AssertionException(
+        `Expected only one icon to render but got two. Either use Nutella or custom icon. Both aren't allowed at the same time.`
       );
   }
 }
