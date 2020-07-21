@@ -2,10 +2,9 @@
 
 .taskbar {
   display: grid;
-  grid-template-columns: $taskbarHeight auto 4rem;
+  grid-template-columns: calc(#{$taskbarHeight} + 1rem) auto 4rem;
   align-items: center;
   box-shadow: 0 42px 84px #ccc;
-  // padding: 0 0.5rem;
   max-height: $taskbarHeight;
   backdrop-filter: blur(3px) saturate(0.4) contrast(0.9);
 
