@@ -9,6 +9,7 @@ import { NativeSdkModule } from "./components/native-sdk/native-sdk.module";
 import { DesktopComponent } from "./routes/global/desktop/desktop.component";
 import { WindowComponent } from "./components/global/window/window.component";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { TaskbarComponent } from './components/global/taskbar/taskbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     NotificationPanelComponent,
     DesktopComponent,
     WindowComponent,
+    TaskbarComponent,
   ],
   imports: [BrowserModule, NativeSdkModule, AppRoutingModule, DragDropModule],
   providers: [],

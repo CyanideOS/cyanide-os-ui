@@ -19,6 +19,8 @@ $transition: all 0.2s ease-out;
 
 $panel-transition: (
   "notifications": all 150ms ease-in-out,
+  "taskbar-panel": all 150ms ease-in-out,
+  "taskbar-icon": all 200ms ease-in-out,
 );
 $panel-background: #ffffffc9;
 $topbar-backdrop: blur(7px) contrast(0.9);
