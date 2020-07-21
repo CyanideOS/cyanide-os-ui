@@ -1,10 +1,24 @@
+@import "../../../../schemes";
+
 .window {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
   background: #fff;
   border-radius: 0.3rem;
+  display: grid;
+  grid-template-rows: 2rem auto;
+
+  $action-size: 0.75rem;
+  $action-gap: 0.4rem;
+  $n-actions: 3;
 
   .control {
     display: grid;
-    grid-template-columns: auto 4.5rem;
+    grid-template-columns: auto calc(
+        (#{$action-size} * #{$n-actions}) +
+          (#{$action-gap} * (#{$n-actions} - 1))
+      );
     padding: 1rem 0.8rem;
 
     .window-info {
@@ -24,21 +38,46 @@
 
     .actions {
       display: grid;
-      grid-template-columns: 1rem 1rem 1rem;
-      grid-gap: 0.5rem;
+      grid-template-columns: repeat(3, $action-size);
+      grid-gap: $action-gap;
       align-items: center;
       text-align: center;
 
       div {
-        width: 0.5rem;
-        height: 0.5rem;
+        width: 0.75rem;
+        height: 0.75rem;
         font-size: 0.4rem;
+        border-radius: 5rem;
+        transition: $transition;
+      }
+
+      .minimize {
+        background: #dac01a;
+
+        &:hover {
+          background: #cfb718;
+        }
+      }
+
+      .maximize {
+        background: green;
+
+        &:hover {
+          background: rgb(0, 112, 0);
+        }
       }
 
       .close {
         background: red;
-        border-radius: 5rem;
+
+        &:hover {
+          background: rgb(200, 0, 0);
+        }
       }
     }
+  }
+
+  .content {
+    padding: 1rem 0.5rem;
   }
 }

@@ -1,13 +1,22 @@
-<div class="window" [ngStyle]="{ width: '100%', height: '100%' }">
-  <div class="control">
+<div
+  class="window"
+  [id]="'win-' + windowId"
+  [ngStyle]="{
+    width: width,
+    'max-width': width,
+    height: height,
+    'max-height': height
+  }"
+>
+  <div class="control" cdkDrag (cdkDragMoved)="drag($event)">
     <div class="window-info">
-      <img src="../../../../assets/icons/icons/notification-24x24.svg" alt="" />
-      <div class="title">Welcome to Networking!</div>
+      <img src="../../../../assets/icons/icons/outlook-48x48.svg" alt="" />
+      <div class="title">Welcome to Outlook!</div>
     </div>
     <div class="actions">
-      <div class="minimize">_</div>
-      <div class="maximize">o</div>
-      <div class="close">x</div>
+      <div class="minimize"></div>
+      <div class="maximize"></div>
+      <div class="close"></div>
     </div>
   </div>
   <div class="content">
@@ -17,6 +26,7 @@
       consectetur necessitatibus quaerat maiores nesciunt illo, animi corporis
       iusto architecto eos!
     </p>
+    <br />
     <native-button
       [icon]="'../../../../assets/icons/icons/wifi-50x50.svg'"
       [innerText]="'Start Networking'"
