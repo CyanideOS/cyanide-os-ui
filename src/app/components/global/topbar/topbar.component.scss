@@ -33,9 +33,14 @@
   }
 
   .actions {
+    $paddingLR: 0.3rem;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, 1rem);
-    grid-gap: 0.6rem;
+    grid-template-columns: repeat(auto-fit, calc(1rem + (#{$paddingLR} * 2)));
     align-items: center;
+
+    img {
+      padding: 0 $paddingLR;
+    }
   }
 }
