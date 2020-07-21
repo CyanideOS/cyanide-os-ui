@@ -18,11 +18,11 @@
   <div class="content">
     <img class="button-icon" [src]="icon" *ngIf="icon" />
     <img
-      class="button-icon"
+      class="nutella-icon"
       [src]="'../../../../assets/icons/nutella/' + nutellaIcon + '.svg'"
       *ngIf="nutellaIcon"
     />
     <div *ngIf="innerComponent" [innerHTML]="innerComponent.outerHTML"></div>
-    <div *ngIf="innerText" [innerText]="innerText"></div>
+    <div class="innerText" *ngIf="innerText" [innerText]="innerText"></div>
   </div>
 </button>

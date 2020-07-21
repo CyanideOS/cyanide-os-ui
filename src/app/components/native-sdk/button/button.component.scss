@@ -44,14 +44,14 @@ button {
       @include text-color($disabled-background, true);
 
       img.button-icon {
-        @include image-color(
-          $background,
-          false
-        ); // Explicitly mentioned "false" so because opacity of its parent also get added
+        opacity: 0.6;
       }
 
       img.nutella-icon {
-        opacity: 0.6;
+        @include image-color(
+          $background,
+          false
+        ); //? Explicitly mentioned "false" so that opacity of its parent doesn't get added!
       }
     }
   }
@@ -65,15 +65,19 @@ button {
     align-items: center;
     height: 100%;
 
+    .innerText {
+      font-weight: 500;
+    }
+
     img.button-icon {
       height: 100%;
       margin-right: 0.7rem;
-      @include image-color($background);
     }
 
     img.nutella-icon {
       height: 100%;
       margin-right: 0.7rem;
+      @include image-color($background);
     }
   }
 }
