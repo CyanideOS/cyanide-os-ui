@@ -1,5 +1,7 @@
 <div
   class="window"
+  cdkDrag
+  (cdkDragMoved)="drag($event)"
   [id]="'win-' + windowId"
   [ngStyle]="{
     width: width,
@@ -8,7 +10,7 @@
     'max-height': height
   }"
 >
-  <div class="control" cdkDrag (cdkDragMoved)="drag($event)">
+  <div class="control">
     <div class="window-info">
       <img src="../../../../assets/icons/icons/outlook-48x48.svg" alt="" />
       <div class="title">Welcome to Outlook!</div>
