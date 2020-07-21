@@ -11,7 +11,7 @@ $width: 22vw;
   height: calc(100vh - #{$taskbarHeight});
   transition: map-get($map: $panel-transition, $key: "notifications");
   backdrop-filter: $panel-backdrop;
-  box-shadow: -2px 0 20px #ffffff42;
+  background: $panel-background;
   z-index: 1e5;
 
   &.opened {

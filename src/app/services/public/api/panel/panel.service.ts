@@ -5,7 +5,7 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class PanelService {
-  isNotificationsOpened: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  isNotificationsOpened: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() {}
 }

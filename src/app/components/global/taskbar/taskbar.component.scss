@@ -6,6 +6,7 @@
   align-items: center;
   box-shadow: 0 42px 84px #ccc;
   max-height: $taskbarHeight;
+  background: $panel-background;
   backdrop-filter: $taskbar-backdrop;
 
   $paddingTB: 0.2rem;
