@@ -2,16 +2,20 @@
 
 .window {
   position: absolute;
-  top: 1rem;
-  left: 2rem;
   background: #fff;
   border-radius: 0.3rem;
   display: grid;
   grid-template-rows: 2rem auto;
+  transition: box-shadow 250ms ease-in-out;
 
   $action-size: 0.75rem;
   $action-gap: 0.4rem;
   $n-actions: 3;
+
+  &.focused {
+    z-index: 1e2;
+    box-shadow: 0 4px 1rem #0000004f;
+  }
 
   .control {
     display: grid;

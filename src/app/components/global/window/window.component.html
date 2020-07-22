@@ -1,13 +1,18 @@
 <div
   class="window"
   cdkDrag
-  (cdkDragMoved)="drag($event)"
+  (cdkDragStarted)="drag($event)"
   [id]="'win-' + windowId"
+  (mouseenter)="focused = true"
+  (mouseleave)="focused = false"
+  [ngClass]="{ focused: focused }"
   [ngStyle]="{
     width: width,
     'max-width': width,
     height: height,
-    'max-height': height
+    'max-height': height,
+    top: position.X + 'rem',
+    left: position.Y + 'rem'
   }"
 >
   <div class="control">
@@ -17,7 +22,7 @@
     </div>
     <div class="actions">
       <div class="minimize"></div>
-      <div class="maximize"></div>
+      <div class="maximize" (click)="maximize()"></div>
       <div class="close"></div>
     </div>
   </div>
