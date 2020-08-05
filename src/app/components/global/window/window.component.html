@@ -2,7 +2,7 @@
   class="window"
   cdkDrag
   [id]="'win-' + windowId"
-  (mouseenter)="focused = true"
+  (blur)="focused = false"
   (focus)="focused = true"
   [ngClass]="{ focused: focused }"
   [ngStyle]="{
@@ -22,10 +22,11 @@
     <div class="actions">
       <div class="minimize"></div>
       <div class="maximize"></div>
-      <div class="close"></div>
+      <div class="close" (click)="closeWindow()"></div>
     </div>
   </div>
   <div class="content">
+    {{ focused }}
     <ms-outlook-microsoft-com></ms-outlook-microsoft-com>
   </div>
 </div>

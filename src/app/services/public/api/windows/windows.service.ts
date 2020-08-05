@@ -36,4 +36,16 @@ export class WindowsService {
     /// Bring focus to the this window
     this.bringToFront(packageName, pid);
   }
+
+  closeWindowByPid(pid: number) {
+    /// Dispose/Unregister the window task
+    this.tasksService.disposeTaskByPid(pid);
+    
+    /// Dispose off the window
+    this.openedWindows.next(
+      this.openedWindows.value.filter((window: WindowInterface) => {
+        return window.pid != pid;
+      })
+    );
+  }
 }

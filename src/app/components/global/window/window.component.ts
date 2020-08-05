@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { WindowsService } from "src/app/services/public/api/windows/windows.service";
 
 @Component({
   selector: "window",
@@ -16,6 +17,9 @@ export class WindowComponent implements OnInit {
   isMinimized: boolean = false;
   _transform: "unset" = "unset";
 
+  @Input("pid")
+  pid: number;
+
   @Input("component")
   component: string;
 
@@ -29,7 +33,7 @@ export class WindowComponent implements OnInit {
     Y: 2,
   };
 
-  constructor() {}
+  constructor(private windowService: WindowsService) {}
 
   maximize() {
     if (this.isMaximized) {
@@ -56,6 +60,10 @@ export class WindowComponent implements OnInit {
 
     this.width = "100%";
     this.height = "100%";
+  }
+
+  closeWindow() {
+    this.windowService.closeWindowByPid(this.pid);
   }
 
   ngOnInit(): void {}

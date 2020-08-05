@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
+import { TaskInterface } from "./interfaces";
 
 @Injectable({
   providedIn: "root",
@@ -7,12 +8,7 @@ import { BehaviorSubject } from "rxjs";
 export class TasksService {
   static lastPid: number = -1;
 
-  tasks: BehaviorSubject<
-    Array<{
-      packageName: string;
-      pid: number;
-    }>
-  > = new BehaviorSubject([]);
+  tasks: BehaviorSubject<Array<TaskInterface>> = new BehaviorSubject([]);
 
   registerTask(packageName: string): number {
     let newTasks = this.tasks.value;
@@ -23,6 +19,15 @@ export class TasksService {
     TasksService.lastPid++;
     this.tasks.next(newTasks);
     return TasksService.lastPid + 1;
+  }
+
+  disposeTaskByPid(pid: number) {
+    this.tasks.next(
+      this.tasks.value.filter((task: TaskInterface) => {
+        return task.pid != pid;
+      })
+    );
+    console.log(this.tasks.value);
   }
 
   constructor() {}
