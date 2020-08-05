@@ -6,7 +6,7 @@ import { BehaviorSubject } from "rxjs";
 })
 export class UserService {
   wallpaper: BehaviorSubject<string> = new BehaviorSubject(
-    "/assets/wallpaper.jpg"
+    "/assets/wallpapers/autmn.jpg"
   );
 
   constructor() {}
