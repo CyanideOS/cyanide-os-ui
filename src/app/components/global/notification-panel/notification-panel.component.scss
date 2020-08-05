@@ -1,21 +1,25 @@
 @import "../../../../schemes";
 
 $width: 22vw;
+$margin: 1.5rem;
 
 .notifications {
   position: absolute;
-  top: $topbarHeight;
+  top: calc(#{$topbarHeight} + #{$margin});
   right: -$width;
   width: $width;
   opacity: 0;
-  height: calc(100vh - #{$topbarHeight});
-  transition: map-get($map: $panel-transition, $key: "notifications");
+  height: calc(100vh - #{$topbarHeight} - (#{$margin} * 2));
   backdrop-filter: $panel-backdrop;
   background: $panel-background;
+  border-radius: 1rem;
   z-index: 1e5;
+  padding: 2rem;
+  transition: map-get($map: $panel-transition, $key: "notifications"), right 0s,
+    opacity 150ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 
   &.opened {
-    right: 0;
+    right: $margin;
     opacity: 1;
   }
 }

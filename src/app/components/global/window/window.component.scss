@@ -1,11 +1,13 @@
 @import "../../../../schemes";
 
+$border-radius: 0.5rem;
+
 .window {
   position: absolute;
-  background: #fff;
-  border-radius: 0.3rem;
+  background: #ffffff00;
+  border-radius: $border-radius;
   display: grid;
-  grid-template-rows: 2rem auto;
+  grid-template-rows: 3rem auto;
   transition: box-shadow 250ms ease-in-out;
 
   $action-size: 0.75rem;
@@ -24,6 +26,8 @@
           (#{$action-gap} * (#{$n-actions} - 1))
       );
     padding: 1rem 0.8rem;
+    background: #fff;
+    border-radius: $border-radius $border-radius 0 0;
 
     .window-info {
       display: grid;
@@ -83,5 +87,8 @@
 
   .content {
     padding: 1rem 0.5rem;
+    background: #fff0;
+    backdrop-filter: blur(7px) saturate(0.7) contrast(90%);
+    border-radius: 0 0 $border-radius $border-radius;
   }
 }
