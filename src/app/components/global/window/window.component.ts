@@ -24,13 +24,13 @@ export class WindowComponent implements OnInit {
   component: string;
 
   position: { X: number; Y: number } = {
-    X: 1,
-    Y: 2,
+    X: 5,
+    Y: 7,
   };
 
   prevPosition: { X: number; Y: number } = {
-    X: 1,
-    Y: 2,
+    X: 5,
+    Y: 7,
   };
 
   constructor(private windowService: WindowsService) {}
@@ -64,6 +64,10 @@ export class WindowComponent implements OnInit {
 
   closeWindow() {
     this.windowService.closeWindowByPid(this.pid);
+  }
+
+  log(v: any) {
+    console.log(v);
   }
 
   ngOnInit(): void {}

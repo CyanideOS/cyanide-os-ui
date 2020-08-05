@@ -2,8 +2,10 @@
   class="window"
   cdkDrag
   [id]="'win-' + windowId"
-  (blur)="focused = false"
-  (focus)="focused = true"
+  (blur)="log('blur')"
+  (focus)="log('focus')"
+  onfocus="console.log('focus')"
+  onblur="console.log('blur')"
   [ngClass]="{ focused: focused }"
   [ngStyle]="{
     width: width,

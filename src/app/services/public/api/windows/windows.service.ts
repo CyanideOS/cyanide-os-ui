@@ -40,7 +40,7 @@ export class WindowsService {
   closeWindowByPid(pid: number) {
     /// Dispose/Unregister the window task
     this.tasksService.disposeTaskByPid(pid);
-    
+
     /// Dispose off the window
     this.openedWindows.next(
       this.openedWindows.value.filter((window: WindowInterface) => {
