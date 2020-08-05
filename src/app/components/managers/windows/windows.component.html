@@ -1,0 +1,6 @@
+<div class="windows">
+  <window
+    *ngFor="let window of windows | async"
+    [component]="window.packageName"
+  ></window>
+</div>

@@ -10,6 +10,8 @@ import { DesktopComponent } from "./routes/global/desktop/desktop.component";
 import { WindowComponent } from "./components/global/window/window.component";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { TaskbarComponent } from './components/global/taskbar/taskbar.component';
+import { WindowsComponent } from './components/managers/windows/windows.component';
+import { OutlookComponent } from './components/temp/outlook/outlook.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TaskbarComponent } from './components/global/taskbar/taskbar.component'
     DesktopComponent,
     WindowComponent,
     TaskbarComponent,
+    WindowsComponent,
+    OutlookComponent,
   ],
   imports: [BrowserModule, NativeSdkModule, AppRoutingModule, DragDropModule],
   providers: [],

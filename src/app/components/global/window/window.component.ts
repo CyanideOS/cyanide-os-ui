@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "window",
@@ -14,6 +14,10 @@ export class WindowComponent implements OnInit {
   focused: boolean = true;
   isMaximized: boolean = false;
   isMinimized: boolean = false;
+  _transform: "unset" = "unset";
+
+  @Input("component")
+  component: string;
 
   position: { X: number; Y: number } = {
     X: 1,
@@ -27,16 +31,6 @@ export class WindowComponent implements OnInit {
 
   constructor() {}
 
-  drag($event) {
-    this.maximize();
-    let windowContent = document.getElementById(`win-${this.windowId}`);
-    const position = $event.source.getFreeDragPosition();
-    const { offsetLeft, offsetTop } = $event.source.element.nativeElement;
-
-    // windowContent.style.top = `${position.x + offsetTop}px`;
-    // windowContent.style.left = `${position.y + offsetLeft}px`;
-  }
-
   maximize() {
     if (this.isMaximized) {
       this.isMaximized = false;
@@ -44,6 +38,7 @@ export class WindowComponent implements OnInit {
       this.height = this.prevHeight;
 
       this.position = this.prevPosition;
+      // this._transform = "unset";
     } else {
       this.isMaximized = true;
       this.prevWidth = this.width;

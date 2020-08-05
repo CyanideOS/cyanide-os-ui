@@ -12,14 +12,9 @@ export class TasksService {
       packageName: string;
       pid: number;
     }>
-  > = new BehaviorSubject([
-    {
-      packageName: "ms-outlook.microsoft.com",
-      pid: 1,
-    },
-  ]);
+  > = new BehaviorSubject([]);
 
-  registerTask(packageName: string) {
+  registerTask(packageName: string): number {
     let newTasks = this.tasks.value;
     newTasks.push({
       packageName: packageName,
@@ -27,6 +22,7 @@ export class TasksService {
     });
     TasksService.lastPid++;
     this.tasks.next(newTasks);
+    return TasksService.lastPid + 1;
   }
 
   constructor() {}
