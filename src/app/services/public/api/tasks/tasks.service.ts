@@ -18,7 +18,7 @@ export class TasksService {
     });
     TasksService.lastPid++;
     this.tasks.next(newTasks);
-    return TasksService.lastPid + 1;
+    return TasksService.lastPid;
   }
 
   disposeTaskByPid(pid: number) {
