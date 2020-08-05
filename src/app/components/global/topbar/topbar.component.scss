@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: calc(#{$topbarHeight} + 1rem) auto 10rem;
   align-items: center;
-  box-shadow: 0 42px 84px #ccc;
+  // box-shadow: 0 42px 84px #ccc;
   max-height: $topbarHeight;
   background: $panel-background;
   backdrop-filter: $topbar-backdrop;

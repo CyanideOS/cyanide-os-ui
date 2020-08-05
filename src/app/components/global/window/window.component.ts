@@ -7,9 +7,9 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class WindowComponent implements OnInit {
   windowId: number = 1;
-  width: string = "65%";
+  width: string = "45%";
   height: string = "50%";
-  prevWidth: string = "65%";
+  prevWidth: string = "45%";
   prevHeight: string = "50%";
   focused: boolean = true;
   isMaximized: boolean = false;

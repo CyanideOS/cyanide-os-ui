@@ -22,6 +22,7 @@ $panel-transition: (
   "taskbar-panel": all 150ms ease-in-out,
   "taskbar-icon": all 200ms ease-in-out,
 );
-$panel-background: #ffffffc9;
-$topbar-backdrop: blur(7px) contrast(0.9);
+$panel-background: #ffffff87;
+// $topbar-backdrop: blur(7px) contrast(0.9);
+$topbar-backdrop: blur(10px) contrast(1.2);
 $panel-backdrop: blur(3px) contrast(0.9);
