@@ -24,6 +24,7 @@
 
   <input
     [type]="type"
+    [disabled]="isDisabled"
     [placeholder]="placeholder"
     (input)="value.next($event.target.value)"
     (focus)="isFocused = true"
