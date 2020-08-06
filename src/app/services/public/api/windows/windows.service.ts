@@ -8,10 +8,10 @@ import { BehaviorSubject } from "rxjs";
 })
 export class WindowsService {
   //! This should be retrieved from local database where all registeries resides!
-  installedApps: object = {
+  installedApps: BehaviorSubject<object> = new BehaviorSubject({
     /// package: component-name
     "ms-outlook.microsoft.com": "ms-outlook-microsoft-com",
-  };
+  });
 
   openedWindows: BehaviorSubject<Array<WindowInterface>> = new BehaviorSubject<
     Array<WindowInterface>

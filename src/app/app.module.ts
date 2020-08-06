@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -30,7 +31,13 @@ import { OutlookComponent } from "./routes/applications/installed/outlook/outloo
     SettingsComponent,
     MessengerComponent,
   ],
-  imports: [BrowserModule, NativeSdkModule, AppRoutingModule, DragDropModule],
+  imports: [
+    BrowserModule,
+    NativeSdkModule,
+    AppRoutingModule,
+    DragDropModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
