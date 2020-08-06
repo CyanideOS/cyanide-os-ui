@@ -22,7 +22,5 @@ export class TextboxComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.value.subscribe(console.log);
-  }
+  ngOnInit(): void {}
 }
