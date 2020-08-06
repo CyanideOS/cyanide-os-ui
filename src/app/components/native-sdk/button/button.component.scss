@@ -21,7 +21,8 @@ button {
     background: map-get($map: $primary, $key: "hover");
   }
 
-  &:active {
+  &:active,
+  &:focus {
     transform: scale(0.95);
   }
 

@@ -21,3 +21,7 @@ img {
 p {
   margin: 0;
 }
+
+::selection {
+  background: #00000021;
+}
