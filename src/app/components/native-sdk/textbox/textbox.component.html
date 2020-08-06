@@ -23,7 +23,7 @@
   />
 
   <input
-    type="text"
+    [type]="type"
     [placeholder]="placeholder"
     (input)="value.next($event.target.value)"
     (focus)="isFocused = true"

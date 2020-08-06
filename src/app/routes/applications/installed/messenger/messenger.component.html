@@ -4,10 +4,14 @@
 ></native-button>
 <br />
 <br />
-<div style="display: table; width: 100%;">
-  <p>gragwre</p>
-  <native-textbox
-    [prefixNutellaIcon]="'person'"
-    [autoWidth]="true"
-  ></native-textbox>
-</div>
+<native-textbox
+  [prefixNutellaIcon]="'person'"
+  [autoWidth]="true"
+  [placeholder]="'Username'"
+></native-textbox>
+<native-textbox
+  [prefixNutellaIcon]="'person'"
+  [autoWidth]="true"
+  [placeholder]="'Password'"
+  [type]="'password'"
+></native-textbox>
