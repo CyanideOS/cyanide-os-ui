@@ -15,7 +15,12 @@ export class WindowsService {
 
   openedWindows: BehaviorSubject<Array<WindowInterface>> = new BehaviorSubject<
     Array<WindowInterface>
-  >([]);
+  >([
+    {
+      packageName: "ms-outlook.microsoft.com",
+      pid: 0,
+    },
+  ]);
 
   constructor(protected tasksService: TasksService) {}
 

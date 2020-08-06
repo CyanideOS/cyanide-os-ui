@@ -8,7 +8,12 @@ import { TaskInterface } from "./interfaces";
 export class TasksService {
   static lastPid: number = -1;
 
-  tasks: BehaviorSubject<Array<TaskInterface>> = new BehaviorSubject([]);
+  tasks: BehaviorSubject<Array<TaskInterface>> = new BehaviorSubject([
+    {
+      packageName: "ms-outlook.microsoft.com",
+      pid: 0,
+    },
+  ]);
 
   registerTask(packageName: string): number {
     let newTasks = this.tasks.value;

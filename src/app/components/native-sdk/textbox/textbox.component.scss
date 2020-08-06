@@ -13,6 +13,7 @@ $iconWidth: 1rem;
   transition: $transition;
   box-sizing: content-box;
   position: relative;
+  background: #fff;
 
   display: inline-flex;
   align-items: center;
@@ -62,6 +63,7 @@ $iconWidth: 1rem;
     outline: none;
     margin: 0 $spacingLR;
     width: 100%;
+    background: inherit;
 
     &:disabled {
       color: map-get($map: $border-color, $key: "disabled");

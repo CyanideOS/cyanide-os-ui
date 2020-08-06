@@ -86,9 +86,11 @@ $border-radius: 0.5rem;
   }
 
   .content {
-    padding: 1rem 0.5rem;
-    background: #fff;
-    backdrop-filter: blur(7px) saturate(0.7) contrast(90%);
+    // padding: 1rem 0.5rem;
+    padding: 0;
+    // background: #fff;
+    backdrop-filter: blur(50px) saturate(0.7) contrast(0.9);
     border-radius: 0 0 $border-radius $border-radius;
+    height: 100%;
   }
 }

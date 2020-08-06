@@ -1,17 +1,24 @@
-<native-button
-  [innerText]="'Turn on notifications'"
-  [nutellaIcon]="'notification'"
-></native-button>
-<br />
-<br />
-<native-textbox
-  [prefixNutellaIcon]="'person'"
-  [autoWidth]="true"
-  [placeholder]="'Username'"
-></native-textbox>
-<native-textbox
-  [prefixNutellaIcon]="'person'"
-  [autoWidth]="true"
-  [placeholder]="'Password'"
-  [type]="'password'"
-></native-textbox>
+<div class="content">
+  <div class="taskbar"></div>
+  <div class="main">
+    <h1 style="text-align: center;">Welcome to Outlook!</h1>
+    <br />
+    <native-textbox
+      [prefixNutellaIcon]="'person'"
+      [autoWidth]="true"
+      [placeholder]="'Username'"
+    ></native-textbox>
+    <native-textbox
+      [prefixNutellaIcon]="'person'"
+      [autoWidth]="true"
+      [placeholder]="'Password'"
+      [type]="'password'"
+    ></native-textbox>
+    <br />
+    <br />
+    <native-button
+      [innerText]="'Turn on notifications'"
+      [nutellaIcon]="'notification'"
+    ></native-button>
+  </div>
+</div>

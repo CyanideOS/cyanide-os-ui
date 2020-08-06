@@ -1,0 +1,11 @@
+.content {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  height: 100%;
+  border-radius: inherit;
+
+  .main {
+    background: #fff;
+    padding: 1rem 0.5rem;
+  }
+}
