@@ -1,7 +1,3 @@
 <div class="windows">
-  <window
-    *ngFor="let window of windows | async"
-    [window]="window"
-    [component]="window.packageName"
-  ></window>
+  <window *ngFor="let window of windows | async" [window]="window"></window>
 </div>

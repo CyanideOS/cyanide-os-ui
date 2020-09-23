@@ -28,7 +28,7 @@ export class TaskbarComponent implements OnInit {
         newTasks.push({
           icon: "outlook-48x48.svg",
           action: () => {
-            this.windowService.bringToFront(task.packageName, task.pid);
+            this.windowService.bringToFront(task.pid);
           },
         });
       });

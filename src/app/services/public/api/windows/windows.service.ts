@@ -1,16 +1,23 @@
 import { Injectable } from "@angular/core";
 import { TasksService } from "../tasks/tasks.service";
-import { WindowInterface } from "./interfaces";
+import { ApplicationInterface, WindowInterface } from "./interfaces";
 import { BehaviorSubject } from "rxjs";
 
+import { TopbarPanelService } from "../panel/topbar/topbar.service";
 @Injectable({
   providedIn: "root",
 })
 export class WindowsService {
   //! This should be retrieved from local database where all registeries resides!
-  installedApps: BehaviorSubject<object> = new BehaviorSubject({
-    /// package: component-name
-    "ms-outlook.microsoft.com": "ms-outlook-microsoft-com",
+  installedApps: BehaviorSubject<{
+    [key: string]: ApplicationInterface;
+  }> = new BehaviorSubject<{ [key: string]: ApplicationInterface }>({
+    "ms-outlook.microsoft.com": {
+      name: "Microsoft Outlook",
+      component: "ms-outlook-microsoft-com",
+      packageName: "ms-outlook.microsoft.com",
+      installedOn: 1600882638399,
+    },
   });
 
   openedWindows: BehaviorSubject<Array<WindowInterface>> = new BehaviorSubject<
@@ -19,39 +26,44 @@ export class WindowsService {
     {
       packageName: "ms-outlook.microsoft.com",
       pid: -1,
+      name: "Microsoft Outlook",
       zIndex: 1e4,
     },
   ]);
 
-  constructor(protected tasksService: TasksService) {}
+  constructor(
+    protected tasksService: TasksService,
+    protected topbarPanelService: TopbarPanelService
+  ) {}
 
-  bringToFront(packageName: string, pid: number) {
+  bringToFront(pid: number) {
+    let currentWindow: WindowInterface;
     let newWindows: Array<WindowInterface> = this.openedWindows.value;
     newWindows.forEach((window) => {
       if (window.pid === pid) {
         window.zIndex = this.getMaxWindowZIndex() + 1;
+        currentWindow = window;
       }
     });
     this.openedWindows.next(newWindows);
-    console.log("Bring to front", packageName, pid);
+    this.topbarPanelService.title.next(currentWindow.name);
   }
 
-  openWindowByPackageName(packageName: string, args: Object = {}) {
-    console.log(packageName, args);
+  openWindowByPackageName(packageName: string, args: Object = {}): void {
     /// Register the task
     const pid: number = this.tasksService.registerTask(packageName);
 
     /// Register window so that it can be visible
     let newWindows: Array<WindowInterface> = this.openedWindows.value;
-    newWindows.push({
+    let currentWindow: WindowInterface = {
       packageName: packageName,
+      name: this.installedApps.value[packageName].name,
       pid: pid,
       zIndex: this.getMaxWindowZIndex() + 1,
-    });
+    };
+    newWindows.push(currentWindow);
     this.openedWindows.next(newWindows);
-
-    // /// Bring focus to the this window
-    // this.bringToFront(packageName, pid);
+    this.topbarPanelService.title.next(currentWindow.name);
   }
 
   getMaxWindowZIndex(): number {

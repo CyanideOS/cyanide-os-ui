@@ -10,6 +10,7 @@ import { WindowsService } from "src/app/services/public/api/windows/windows.serv
 export class WindowComponent implements OnInit {
   @Input("window")
   window: WindowInterface;
+
   width: string = "45%";
   height: string = "50%";
   prevWidth: string = "45%";
@@ -18,9 +19,6 @@ export class WindowComponent implements OnInit {
   isMaximized: boolean = false;
   isMinimized: boolean = false;
   _transform: "unset" = "unset";
-
-  @Input("component")
-  component: string;
 
   position: { X: number; Y: number } = {
     X: 5,
@@ -62,7 +60,7 @@ export class WindowComponent implements OnInit {
   }
 
   bringToFront(): void {
-    this.windowService.bringToFront(this.window.packageName, this.window.pid);
+    this.windowService.bringToFront(this.window.pid);
   }
 
   closeWindow() {
