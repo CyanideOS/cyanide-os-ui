@@ -19,7 +19,7 @@ export class WindowsService {
     {
       packageName: "ms-outlook.microsoft.com",
       pid: -1,
-      zIndex: 1e2,
+      zIndex: 1e4,
     },
   ]);
 
