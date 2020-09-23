@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { WindowInterface } from "src/app/services/public/api/windows/interfaces";
 import { WindowsService } from "src/app/services/public/api/windows/windows.service";
 
 @Component({
@@ -7,7 +8,8 @@ import { WindowsService } from "src/app/services/public/api/windows/windows.serv
   styleUrls: ["./window.component.scss"],
 })
 export class WindowComponent implements OnInit {
-  windowId: number = 1;
+  @Input("window")
+  window: WindowInterface;
   width: string = "45%";
   height: string = "50%";
   prevWidth: string = "45%";
@@ -16,9 +18,6 @@ export class WindowComponent implements OnInit {
   isMaximized: boolean = false;
   isMinimized: boolean = false;
   _transform: "unset" = "unset";
-
-  @Input("pid")
-  pid: number;
 
   @Input("component")
   component: string;
@@ -62,8 +61,12 @@ export class WindowComponent implements OnInit {
     this.height = "100%";
   }
 
+  bringToFront(): void {
+    this.windowService.bringToFront(this.window.packageName, this.window.pid);
+  }
+
   closeWindow() {
-    this.windowService.closeWindowByPid(this.pid);
+    this.windowService.closeWindowByPid(this.window.pid);
   }
 
   log(v: any) {

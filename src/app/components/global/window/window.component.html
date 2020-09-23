@@ -1,11 +1,10 @@
 <div
   class="window"
   cdkDrag
-  [id]="'win-' + windowId"
+  [id]="'win-' + window.pid"
   (blur)="log('blur')"
   (focus)="log('focus')"
-  onfocus="console.log('focus')"
-  onblur="console.log('blur')"
+  (mousedown)="bringToFront()"
   [ngClass]="{ focused: focused }"
   [ngStyle]="{
     width: width,
@@ -13,13 +12,14 @@
     height: height,
     'max-height': height,
     top: position.X + 'rem',
-    left: position.Y + 'rem'
+    left: position.Y + 'rem',
+    'z-index': window.zIndex
   }"
 >
   <div class="control">
     <div class="window-info">
       <img src="../../../../assets/icons/icons/outlook-48x48.svg" alt="" />
-      <div class="title">Welcome to Outlook!</div>
+      <div class="title">Welcome to Outlook! {{ window.pid }}</div>
     </div>
     <div class="actions">
       <div class="minimize"></div>

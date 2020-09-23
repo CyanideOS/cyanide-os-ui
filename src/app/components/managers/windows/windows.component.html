@@ -1,7 +1,7 @@
 <div class="windows">
   <window
     *ngFor="let window of windows | async"
-    [pid]="window.pid"
+    [window]="window"
     [component]="window.packageName"
   ></window>
 </div>
