@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { WindowsManagerService } from 'src/app/native-sdk/services/window-manager/window-manager.service';
+import { TaskManagerService } from 'src/app/services/managers/task-manager/task-manager.service';
 
 @Component({
   selector: 'TaskPanel',
@@ -6,7 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-panel.component.scss'],
 })
 export class TaskPanelComponent implements OnInit {
-  constructor() {}
+  tasks: BehaviorSubject<
+    Array<{
+      icon: string;
+      action: any;
+    }>
+  > = new BehaviorSubject([]);
 
-  ngOnInit(): void {}
+  constructor(
+    protected taskManagerService: TaskManagerService,
+    protected windowsManagerService: WindowsManagerService
+  ) {}
+
+  ngOnInit(): void {
+    this.taskManagerService.tasks.subscribe((tasks) => {
+      let newTasks = [];
+      tasks.forEach((task) => {
+        newTasks.push({
+          icon: 'outlook-48x48.svg',
+          action: () => {
+            this.windowsManagerService.bringToFront(task.pid);
+          },
+        });
+      });
+      this.tasks.next(newTasks);
+    });
+  }
 }
