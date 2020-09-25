@@ -1,1 +1,25 @@
-<p>window works!</p>
+<div
+  class="window"
+  cdkDrag
+  [ngStyle]="{
+    width: window.width + 'rem',
+    'max-width': window.width + 'rem',
+    height: window.height + 'rem',
+    'max-height': window.height + 'rem'
+  }"
+>
+  <div class="control">
+    <div class="window-info">
+      <img src="../../../../assets/icons/icons/outlook-48x48.svg" alt="" />
+      <div class="title">Welcome to Outlook!</div>
+    </div>
+    <div class="actions">
+      <div class="minimize"></div>
+      <div class="maximize"></div>
+      <div class="close" (click)="closeWindow()"></div>
+    </div>
+  </div>
+  <div class="content">
+    <NativeButton innerText="Hello World"></NativeButton>
+  </div>
+</div>

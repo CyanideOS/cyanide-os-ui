@@ -7,6 +7,18 @@
 >
   <TopPanel></TopPanel>
   <Desktop></Desktop>
+
+  <Window
+    class="window"
+    [window]="window"
+    *ngFor="let window of windowsManagerService.openedWindows | async"
+    [id]="'win-' + window.pid"
+    [ngStyle]="{
+      'z-index': window.zIndex,
+      left: window.positionX + 'rem',
+      top: window.positionY + 'rem'
+    }"
+  ></Window>
 </div>
 
 <NotificationPanel></NotificationPanel>

@@ -6,8 +6,7 @@
 
   background-size: cover;
 
-  .routes {
-    max-height: calc(100vh - #{$topbarHeight});
-    overflow: hidden;
+  .window {
+    position: absolute;
   }
 }

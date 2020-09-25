@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WindowsManagerService } from './native-sdk/services/window-manager/window-manager.service';
 import { ApiService } from './services/api/api.service';
 import { UserService } from './services/user/user.service';
 
@@ -10,7 +11,8 @@ import { UserService } from './services/user/user.service';
 export class AppComponent {
   constructor(
     protected userServices: UserService,
-    protected apiService: ApiService
+    protected apiService: ApiService,
+    public windowsManagerService: WindowsManagerService
   ) {}
 
   getWallpaperUrl() {
