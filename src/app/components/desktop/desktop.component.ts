@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { WindowsManagerService } from "src/app/native-sdk/services/window-manager/window-manager.service";
+import { WindowsManagerService } from "../../services/managers/window-manager/window-manager.service";
 import { TopPanelManagerService } from "src/app/services/panel/top-panel-manager/top-panel-manager.service";
 
 @Component({
