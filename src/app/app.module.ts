@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NativeSdkModule } from './native-sdk/native-sdk.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +13,10 @@ import { TopPanelComponent } from './components/panels/top-panel/top-panel.compo
     AppComponent,
     NotificationPanelComponent,
     TaskPanelComponent,
-    TopPanelComponent
+    TopPanelComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NativeSdkModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,13 @@
+$topbarHeight: 1.5rem;
+
+$transition: all 0.2s ease-out;
+
+$panel-transition: (
+  "notifications": all 150ms,
+  "taskbar-panel": all 150ms ease-in-out,
+  "taskbar-icon": all 200ms ease-in-out,
+);
+$panel-background: #ffffff87;
+// $topbar-backdrop: blur(7px) contrast(0.9);
+$topbar-backdrop: blur(4px) contrast(1.2);
+$panel-backdrop: blur(7px) contrast(0.8);

@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-textbox',
+  selector: 'NativeTextbox',
   templateUrl: './textbox.component.html',
-  styleUrls: ['./textbox.component.scss']
+  styleUrls: ['./textbox.component.scss'],
 })
 export class TextboxComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

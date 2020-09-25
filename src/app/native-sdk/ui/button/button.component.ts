@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NativeSDKExceptionService } from '../../services/exceptions/exceptions.service';
 
 @Component({
-  selector: 'app-button',
+  selector: 'NativeButton',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
 })
-export class ButtonComponent implements OnInit {
+export class NativeButton implements OnInit {
+  X: number = 0;
+  Y: number = 0;
 
-  constructor() { }
+  @Input('isOutlined') isOutlined: boolean = false;
+  @Input('isDisabled') isDisabled: boolean = false;
+  @Input('innerComponent') innerComponent: HTMLElement;
+  @Input('innerText') innerText: string = '';
+  @Input('overflow') overflow: 'clip' | 'ellipsis';
+  @Input('width') width: number;
+  @Input('icon') icon: string;
+  @Input('nutellaIcon') nutellaIcon: string;
+  @Input('height') height: number = 2;
 
-  ngOnInit(): void {
+  constructor(protected exceptionService: NativeSDKExceptionService) {}
+
+  move($event: MouseEvent) {
+    this.X = $event.clientX;
+    this.Y = $event.clientY;
   }
 
+  ngOnInit(): void {
+    if (!this.innerText && !this.innerComponent)
+      this.exceptionService.AssertionException(
+        `Expected data inside button for rendering got "null"`
+      );
+
+    if (this.icon && this.nutellaIcon)
+      this.exceptionService.AssertionException(
+        `Expected only one icon to render but got two. Either use Nutella or custom icon. Both aren't allowed at the same time.`
+      );
+  }
 }
