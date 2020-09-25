@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-notification-panel',
+  selector: 'NotificationPanel',
   templateUrl: './notification-panel.component.html',
-  styleUrls: ['./notification-panel.component.scss']
+  styleUrls: ['./notification-panel.component.scss'],
 })
 export class NotificationPanelComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

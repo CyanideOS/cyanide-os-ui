@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NotificationPanelComponent } from './components/panels/notification-panel/notification-panel.component';
 import { TaskPanelComponent } from './components/panels/task-panel/task-panel.component';
 import { TopPanelComponent } from './components/panels/top-panel/top-panel.component';
+import { DesktopComponent } from './components/desktop/desktop.component';
+import { WidgetComponent } from './components/desktop/widget/widget.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { TopPanelComponent } from './components/panels/top-panel/top-panel.compo
     NotificationPanelComponent,
     TaskPanelComponent,
     TopPanelComponent,
+    DesktopComponent,
+    WidgetComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NativeSdkModule],
   providers: [],

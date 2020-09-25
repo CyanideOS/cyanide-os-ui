@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-top-panel',
+  selector: 'TopPanel',
   templateUrl: './top-panel.component.html',
-  styleUrls: ['./top-panel.component.scss']
+  styleUrls: ['./top-panel.component.scss'],
 })
 export class TopPanelComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

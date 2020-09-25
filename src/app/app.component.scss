@@ -1,0 +1,13 @@
+@import "../scss/constants";
+
+.root {
+  display: grid;
+  grid-template-rows: $topbarHeight calc(100vh - #{$topbarHeight});
+
+  background-size: cover;
+
+  .routes {
+    max-height: calc(100vh - #{$topbarHeight});
+    overflow: hidden;
+  }
+}

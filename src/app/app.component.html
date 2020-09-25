@@ -1,0 +1,12 @@
+<div
+  class="root"
+  [ngStyle]="{
+    background: 'url(' + (getWallpaperUrl() | async) + ')',
+    'background-size': 'cover'
+  }"
+>
+  <TopPanel></TopPanel>
+</div>
+
+<NotificationPanel></NotificationPanel>
+<TaskPanel></TaskPanel>
