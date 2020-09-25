@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WindowManagerService } from './window-manager.service';
+import { WindowsManagerService } from './window-manager.service';
 
-describe('WindowManagerService', () => {
-  let service: WindowManagerService;
+describe('WindowsManagerService', () => {
+  let service: WindowsManagerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WindowManagerService);
+    service = TestBed.inject(WindowsManagerService);
   });
 
   it('should be created', () => {
