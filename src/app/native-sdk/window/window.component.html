@@ -1,6 +1,7 @@
 <div
   class="window"
   cdkDrag
+  (mousedown)="bringToFront()"
   [ngStyle]="{
     width: window.width + 'rem',
     'max-width': window.width + 'rem',
