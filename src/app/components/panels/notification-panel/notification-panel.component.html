@@ -1,1 +1,8 @@
-<p>notification-panel works!</p>
+<div
+  class="notifications"
+  [ngClass]="{
+    opened: notificationsManagerService.isNotificationsOpened | async
+  }"
+>
+  Hello World!
+</div>

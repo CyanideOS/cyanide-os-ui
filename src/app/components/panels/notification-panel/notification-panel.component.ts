@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationsManagerService } from 'src/app/services/panel/notifications-manager/notifications-manager.service';
 
 @Component({
   selector: 'NotificationPanel',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification-panel.component.scss'],
 })
 export class NotificationPanelComponent implements OnInit {
-  constructor() {}
+  constructor(
+    public notificationsManagerService: NotificationsManagerService
+  ) {}
 
   ngOnInit(): void {}
 }
