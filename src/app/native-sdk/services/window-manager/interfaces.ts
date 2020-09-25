@@ -16,10 +16,3 @@ export interface WindowInterface {
   zIndex: number;
   port: number;
 }
-
-export interface ApplicationInterface {
-  packageName: string;
-  name: string;
-  component: string;
-  installedOn: number;
-}

@@ -1,39 +1,22 @@
 import { Injectable } from '@angular/core';
-import { ApplicationInterface, WindowInterface } from './interfaces';
+import { WindowInterface } from './interfaces';
 import { BehaviorSubject } from 'rxjs';
 import { TaskManagerService } from 'src/app/services/managers/task-manager/task-manager.service';
 import { TopPanelManagerService } from 'src/app/services/panel/top-panel-manager/top-panel-manager.service';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WindowsManagerService {
-  //! This should be retrieved from local database where all registeries resides!
-  installedApps: BehaviorSubject<{
-    [key: string]: ApplicationInterface;
-  }> = new BehaviorSubject<{ [key: string]: ApplicationInterface }>({
-    'ms-outlook.microsoft.com': {
-      name: 'Microsoft Outlook',
-      component: 'ms-outlook-microsoft-com',
-      packageName: 'ms-outlook.microsoft.com',
-      installedOn: 1600882638399,
-    },
-  });
-
   openedWindows: BehaviorSubject<Array<WindowInterface>> = new BehaviorSubject<
     Array<WindowInterface>
-  >([
-    // {
-    //   packageName: 'ms-outlook.microsoft.com',
-    //   pid: -1,
-    //   name: 'Microsoft Outlook',
-    //   zIndex: 1e4,
-    // },
-  ]);
+  >([]);
 
   constructor(
     protected taskManagerService: TaskManagerService,
-    protected topPanelManagerService: TopPanelManagerService
+    protected topPanelManagerService: TopPanelManagerService,
+    protected apiService: ApiService
   ) {}
 
   bringToFront(pid: number) {
@@ -53,29 +36,21 @@ export class WindowsManagerService {
     /// Register the task
     const pid: number = this.taskManagerService.registerTask(packageName);
 
-    /// Register window so that it can be visible
-    let newWindows: Array<WindowInterface> = this.openedWindows.value;
-    let currentWindow: WindowInterface = {
-      packageName: packageName,
-      name: this.installedApps.value[packageName].name,
-      title: this.installedApps.value[packageName].name,
-      pid: pid,
-      width: 70,
-      height: 50,
-      zIndex: this.getMaxWindowZIndex() + 1,
-      icon: '',
-      positionY: 8,
-      positionX: 18,
-      isClosable: true,
-      isMaximizable: true,
-      isMinimizable: true,
-      isModal: false,
-      isOpenAtCenter: true,
-      port: 4200,
-    };
-    newWindows.push(currentWindow);
-    this.openedWindows.next(newWindows);
-    this.topPanelManagerService.title.next(currentWindow.title);
+    /// Register the window
+    this.apiService.serveApplicationByPid(pid, args).subscribe(
+      (res: WindowInterface) => {
+        let newWindows: Array<WindowInterface> = this.openedWindows.value;
+        res['zIndex'] = this.getMaxWindowZIndex() + 1;
+        newWindows.push(res);
+
+        /// Make the window visible
+        this.openedWindows.next(newWindows);
+        this.topPanelManagerService.title.next(res.title);
+      },
+      () => {
+        this.taskManagerService.disposeTaskByPid(pid);
+      }
+    );
   }
 
   getMaxWindowZIndex(): number {
