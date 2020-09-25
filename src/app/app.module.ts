@@ -12,6 +12,7 @@ import { WindowComponent } from "./components/window/window.component";
 import { DesktopComponent } from "./components/desktop/desktop.component";
 import { WidgetComponent } from "./components/desktop/widget/widget.component";
 import { SafeUrlPipe } from "./pipes/safe-url/safe-url.pipe";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { SafeUrlPipe } from "./pipes/safe-url/safe-url.pipe";
     WindowComponent,
     SafeUrlPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NativeSdkModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NativeSdkModule,
+    DragDropModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

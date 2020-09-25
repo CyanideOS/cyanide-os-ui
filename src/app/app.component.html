@@ -11,6 +11,7 @@
   <Window
     class="window"
     [window]="window"
+    cdkDrag
     *ngFor="let window of windowsManagerService.openedWindows | async"
     [id]="'win-' + window.pid"
     [ngStyle]="{
