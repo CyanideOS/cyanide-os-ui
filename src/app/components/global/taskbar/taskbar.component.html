@@ -1,9 +1,0 @@
-<div class="taskbar">
-  <div class="content">
-    <img
-      [src]="'../../../../assets/icons/icons/' + task.icon"
-      (click)="task.action()"
-      *ngFor="let task of tasks | async"
-    />
-  </div>
-</div>
