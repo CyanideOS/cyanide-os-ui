@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { WindowsManagerService } from 'src/app/native-sdk/services/window-manager/window-manager.service';
-import { TopPanelManagerService } from 'src/app/services/panel/top-panel-manager/top-panel-manager.service';
+import { Component, OnInit } from "@angular/core";
+import { WindowsManagerService } from "src/app/native-sdk/services/window-manager/window-manager.service";
+import { TopPanelManagerService } from "src/app/services/panel/top-panel-manager/top-panel-manager.service";
 
 @Component({
-  selector: 'Desktop',
-  templateUrl: './desktop.component.html',
-  styleUrls: ['./desktop.component.scss'],
+  selector: "Desktop",
+  templateUrl: "./desktop.component.html",
+  styleUrls: ["./desktop.component.scss"],
 })
 export class DesktopComponent implements OnInit {
   constructor(
@@ -14,12 +14,12 @@ export class DesktopComponent implements OnInit {
   ) {}
 
   desktopFocused() {
-    this.topPanelManagerService.title.next('CyanideOS');
+    this.topPanelManagerService.title.next("CyanideOS");
   }
 
   openNewWindow() {
     this.windowsManagerService.openWindowByPackageName(
-      'ms-outlook.microsoft.com'
+      "settings.cyanide.application"
     );
   }
 

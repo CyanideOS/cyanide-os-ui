@@ -11,13 +11,26 @@
 >
   <div class="control">
     <div class="window-info">
-      <img src="../../../../assets/icons/icons/outlook-48x48.svg" alt="" />
-      <div class="title">Welcome to Outlook!</div>
+      <img
+        [src]="'http://localhost:' + window.port + '/assets/' + window.icon"
+        alt=""
+      />
+      <div class="title">{{ window.title }}</div>
     </div>
     <div class="actions">
-      <div class="minimize"></div>
-      <div class="maximize"></div>
-      <div class="close" (click)="closeWindow()"></div>
+      <div
+        class="minimize"
+        *ngIf="window.isMinimizable && !window.isModal"
+      ></div>
+      <div
+        class="maximize"
+        *ngIf="window.isMaximizable && !window.isModal"
+      ></div>
+      <div
+        class="close"
+        *ngIf="window.isClosable || window.isModal"
+        (click)="closeWindow()"
+      ></div>
     </div>
   </div>
   <iframe

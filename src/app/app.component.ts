@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { WindowsManagerService } from './native-sdk/services/window-manager/window-manager.service';
-import { ApiService } from './services/api/api.service';
-import { UserService } from './services/user/user.service';
+import { Component } from "@angular/core";
+import { WindowsManagerService } from "./native-sdk/services/window-manager/window-manager.service";
+import { ApiService } from "./services/api/api.service";
+import { UserService } from "./services/user/user.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
   constructor(
@@ -21,5 +21,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.apiService.getInstalledApps();
+    this.windowsManagerService.openWindowByPackageName(
+      "settings.cyanide.application"
+    );
   }
 }
