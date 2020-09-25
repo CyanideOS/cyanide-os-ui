@@ -20,5 +20,8 @@
       <div class="close" (click)="closeWindow()"></div>
     </div>
   </div>
-  <iframe class="content" [src]="'http://localhost:' + window.port"></iframe>
+  <iframe
+    class="content"
+    [src]="'http://localhost:' + window.port | safeUrl"
+  ></iframe>
 </div>

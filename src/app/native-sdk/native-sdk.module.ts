@@ -6,6 +6,7 @@ import { WindowComponent } from './window/window.component';
 import { NativeButton } from './ui/button/button.component';
 import { NativeCheckbox } from './ui/checkbox/checkbox.component';
 import { TextboxComponent } from './ui/textbox/textbox.component';
+import { SafeUrlPipe } from './pipes/safe-url/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TextboxComponent } from './ui/textbox/textbox.component';
     NativeButton,
     NativeCheckbox,
     TextboxComponent,
+    SafeUrlPipe,
   ],
   exports: [WindowComponent, NativeButton, NativeCheckbox, TextboxComponent],
   imports: [CommonModule, DragDropModule],
