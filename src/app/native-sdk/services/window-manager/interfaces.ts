@@ -14,6 +14,7 @@ export interface WindowInterface {
   width?: number;
   height?: number;
   zIndex: number;
+  port: number;
 }
 
 export interface ApplicationInterface {

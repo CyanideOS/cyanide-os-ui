@@ -71,10 +71,11 @@ export class WindowsManagerService {
       isMinimizable: true,
       isModal: false,
       isOpenAtCenter: true,
+      port: 4200,
     };
     newWindows.push(currentWindow);
     this.openedWindows.next(newWindows);
-    this.topPanelManagerService.title.next(currentWindow.name);
+    this.topPanelManagerService.title.next(currentWindow.title);
   }
 
   getMaxWindowZIndex(): number {
