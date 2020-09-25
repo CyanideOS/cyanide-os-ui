@@ -11,6 +11,7 @@ import { TopPanelComponent } from "./components/panels/top-panel/top-panel.compo
 import { WindowComponent } from "./components/window/window.component";
 import { DesktopComponent } from "./components/desktop/desktop.component";
 import { WidgetComponent } from "./components/desktop/widget/widget.component";
+import { SafeUrlPipe } from "./pipes/safe-url/safe-url.pipe";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { WidgetComponent } from "./components/desktop/widget/widget.component";
     DesktopComponent,
     WidgetComponent,
     WindowComponent,
+    SafeUrlPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NativeSdkModule],
   providers: [],
