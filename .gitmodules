@@ -1,0 +1,3 @@
+[submodule "src/app/native-sdk"]
+	path = src/app/native-sdk
+	url = https://github.com/yogesh-aggarwal/cyanide-os-native-sdk
