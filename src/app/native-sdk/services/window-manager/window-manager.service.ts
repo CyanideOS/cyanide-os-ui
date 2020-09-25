@@ -48,6 +48,7 @@ export class WindowsManagerService {
         this.topPanelManagerService.title.next(res.title);
       },
       () => {
+        /// Remove the task because system is unable to start the window
         this.taskManagerService.disposeTaskByPid(pid);
       }
     );
