@@ -21,8 +21,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.apiService.getInstalledApps();
-    this.windowsManagerService.openWindowByPackageName(
-      "settings.cyanide.application"
-    );
+    // this.windowsManagerService.openWindowByPackageName(
+    //   "settings.cyanide.application"
+    // );
   }
 }
